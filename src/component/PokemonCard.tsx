@@ -1,17 +1,19 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../app/store';
-import { getPokemon, pokemonFetchStatus, selectPokemonState, selectPokemonStatus } from '../features/pokemonSlice';
+import { getPokemon, pokemonFetchStatus, pokemonType, selectPokemonState, selectPokemonStatus } from '../features/pokemonSlice';
 
-type Props = {}
+interface IPokemonCardProps {
+  pokemon: pokemonType
+}
 
-const PokemonCard =  (props: Props) => {
-
-
-
-    
+const PokemonCard: React.FunctionComponent<IPokemonCardProps> =  ({pokemon}) => {
+   
   return (
-    <div>{pokemonState[0].name}</div>
+    <>
+    {/* <div>{pokemon.name}</div> */}
+    {console.log(pokemon.name)}
+    </>
   )
 }
 

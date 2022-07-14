@@ -41,9 +41,15 @@ const initialState: pokeSliceType = {
     error: null
 }
 
-export const getPokemon = createAsyncThunk('getPokemon', async (pokemonIndex:number) => {
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon/"+pokemonIndex.toString()+"/")
-    return (await response.json()) as pokemonType
+export const getPokemon = createAsyncThunk('getPokemon', async () => {
+    let fullResponse: pokemonType[] = []
+    for (let index = 1; index <= 50; index++) {
+        const response = await fetch("https://pokeapi.co/api/v2/pokemon/"+index.toString()+"/")
+        const responseJson = await response.json() as pokemonType
+        fullResponse.push(responseJson)
+    }
+    console.log(fullResponse)
+    return (fullResponse) as pokemonType[]
 })
 
 export const pokemonSlice = createSlice({
