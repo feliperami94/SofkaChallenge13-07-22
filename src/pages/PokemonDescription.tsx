@@ -13,7 +13,7 @@ const PokemonDescription: React.FunctionComponent<IPokemonDescriptionProps> = ()
   const {pokemonSelected} = state;
     return (
         <>
-            <div className='sm:w-3/4 mx-auto my-5 px-20 py-5 rounded-lg border-4 '>
+            <div className='sm:w-1/3 mx-auto my-5 px-20 py-5 rounded-lg border-4 '>
             <img src={pokemonSelected.sprites?.front_default} alt="" className='mx-auto'/>
             <br />
             <p className='text-center'>{pokemonSelected.name}</p>
