@@ -9,15 +9,9 @@ interface IPokemonCardProps {
 }
 
 const PokemonCard: React.FunctionComponent<IPokemonCardProps> =  ({pokemon}) => {
-  const navigate = useNavigate();
-
-  // const cardClick = () => {
-    
-  // }
-
    
   return (
-    <Link to={"/pokemonDescription"} state={{idSelected: pokemon.name}}>
+    <Link to={"/pokemonDescription"} state={{pokemonSelected: pokemon}}>
     <div className='m-5 px-20 py-5 rounded-lg border-4'>
       <img src={pokemon.sprites?.front_default} alt="" />
       <p className='text-center'>{pokemon.name}</p>
