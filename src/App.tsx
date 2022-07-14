@@ -8,6 +8,7 @@ import PokemonList from './pages/PokemonList'
 import { useAppDispatch } from './app/store'
 import { getPokemon, pokemonFetchStatus, selectPokemonStatus } from './features/pokemonSlice'
 import { useSelector } from 'react-redux'
+import PokemonDescription from './pages/PokemonDescription';
 
 
 function App() {
@@ -20,8 +21,13 @@ function App() {
           <a href="">Pokelist</a>
           <a href="">User: Felipe Ramirez</a>
         </nav>
-        <PokemonList/>
       </div>
+
+      <Routes>
+      <Route path="/" element={<PokemonList />}/>
+        <Route path="/pokemonDescription" element={<PokemonDescription />}/>
+      </Routes>
+      
     </BrowserRouter>
   )
 }

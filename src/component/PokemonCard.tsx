@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../app/store';
 import { getPokemon, pokemonFetchStatus, pokemonType, selectPokemonState, selectPokemonStatus } from '../features/pokemonSlice';
 
@@ -8,14 +9,16 @@ interface IPokemonCardProps {
 }
 
 const PokemonCard: React.FunctionComponent<IPokemonCardProps> =  ({pokemon}) => {
+  const navigate = useNavigate();
 
-  const cardClick = () => {
+  // const cardClick = () => {
     
-  }
+  // }
+
    
   return (
-
-    <div className='m-5 px-20 py-5 rounded-lg border-4' onClick={cardClick}>
+    <Link to={"/pokemonDescription"} state={{idSelected: pokemon.name}}>
+    <div className='m-5 px-20 py-5 rounded-lg border-4'>
       <img src={pokemon.sprites?.front_default} alt="" />
       <p className='text-center'>{pokemon.name}</p>
       <div className='grid row-auto'>
@@ -24,6 +27,7 @@ const PokemonCard: React.FunctionComponent<IPokemonCardProps> =  ({pokemon}) => 
       })}
       </div>
     </div>
+    </Link>
   )
 }
 

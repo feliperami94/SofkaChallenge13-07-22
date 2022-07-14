@@ -1,12 +1,19 @@
 import * as React from 'react';
+import { useLocation } from 'react-router';
+import { pokemonType } from '../features/pokemonSlice';
 
-interface IAppProps {
+interface IPokemonDescriptionProps {
+    idSelected: string
 }
 
-const App: React.FunctionComponent<IAppProps> = (props) => {
-  return(
-    
-  ) ;
+const PokemonDescription: React.FunctionComponent<IPokemonDescriptionProps> = () => {
+  const location = useLocation();
+  const state = location.state as IPokemonDescriptionProps;
+  const {idSelected} = state;
+    return (
+    <div>{idSelected}</div>
+  );
 };
 
-export default App;
+export default PokemonDescription;
+
