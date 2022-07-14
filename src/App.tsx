@@ -13,17 +13,16 @@ import { useSelector } from 'react-redux'
 function App() {
   const [count, setCount] = useState(0)
 
-
-
-
   return (
-    <div>
-      <nav className='flex sm:justify-left space-x-4 p-5 bg-orange-600'>
-        <a href="">Pokelist</a>
-        <a href="">User: Felipe Ramirez</a>
-      </nav>
-      <PokemonList/>
-    </div>
+    <BrowserRouter>
+      <div>
+        <nav className='flex w-100 sm:justify-left space-x-4 p-5 bg-orange-600'>
+          <a href="">Pokelist</a>
+          <a href="">User: Felipe Ramirez</a>
+        </nav>
+        <PokemonList/>
+      </div>
+    </BrowserRouter>
   )
 }
 

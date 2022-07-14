@@ -48,7 +48,6 @@ export const getPokemon = createAsyncThunk('getPokemon', async () => {
         const responseJson = await response.json() as pokemonType
         fullResponse.push(responseJson)
     }
-    console.log(fullResponse)
     return (fullResponse) as pokemonType[]
 })
 
@@ -64,7 +63,7 @@ export const pokemonSlice = createSlice({
         })
         builder.addCase(getPokemon.fulfilled, (state, action) => {
             state.status = pokemonFetchStatus.COMPLETED
-            state.pokemonList.push(action.payload)   
+            state.pokemonList = action.payload
         })
         builder.addCase(getPokemon.rejected, (state, action) => {
             state.status = pokemonFetchStatus.FAILED

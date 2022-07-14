@@ -15,15 +15,16 @@ const PokemonList = (props: Props) => {
     if (pokemonStatus === pokemonFetchStatus.IDLE) {
         dispatch(getPokemon())     
     }
-  }, [])
+  }, [dispatch])
+
 
 
   return (
-    <>
-   {pokemonState.map((pokemon: pokemonType) => {
-   <PokemonCard key={pokemon.id} pokemon={pokemon}/>
-   })}
-    </>
+    <div className='flex flex-wrap justify-center' >
+      {pokemonState.map((pokemon: pokemonType) => {
+      return <PokemonCard key={pokemon.id} pokemon={pokemon}/>
+      })}
+    </div>
   )
 }
 
