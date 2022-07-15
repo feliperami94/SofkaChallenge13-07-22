@@ -35,7 +35,7 @@ const PokemonList = (props: Props) => {
     <div className='flex justify-center'>
       <input placeholder='Search a pokemon' type="text" value={filterInput} onChange={e=>setFilterInput(e.target.value.toLocaleLowerCase())} className='my-5 mx-auto p-5 border-2 border-amber-500 rounded-md'/>
     </div>
-      <div className='flex flex-wrap justify-between p-10' >
+      <div className='flex flex-wrap justify-center p-10' >
         {pokemonState.filter(pokemon => pokemon.name.includes(filterInput))
         .map((pokemon: pokemonType) => {
         return <PokemonCard key={pokemon.id} pokemon={pokemon}/>
