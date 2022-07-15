@@ -9,7 +9,7 @@ interface IPokemonDescriptionProps {
     pokemonSelected: pokemonType
 }
 
-const PokemonDescription: React.FunctionComponent<IPokemonDescriptionProps> = () => {
+const PokemonDescription: React.FunctionComponent = () => {
   const location = useLocation();
   const state = location.state as IPokemonDescriptionProps;
   const {pokemonSelected} = state;

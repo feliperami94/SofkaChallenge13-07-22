@@ -16,9 +16,9 @@ export type pokemonType = {
     order: number,
     past_types: object[],
     species: {name: string, url: string},
-    sprites: object,
+    sprites: {front_default: string},
     stats: object[],
-    types: object[],
+    types: {type: {name: string}}[],
     weight: number
 }
 
