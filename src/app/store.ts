@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from 'react-redux'
 import { pokemonSlice } from "../features/pokemonSlice";
+import userReducer from "../features/userSlice"
 
 export const store = configureStore({
     reducer:{
-        pokemon: pokemonSlice.reducer
+        pokemon: pokemonSlice.reducer,
+        user: userReducer
     },
 })
 
